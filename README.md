@@ -47,19 +47,6 @@ The application works with a nested data structure:
 
 To learn more about SolidJS, check out the [Solid Documentation](https://www.solidjs.com/docs/latest/api).
 
-## Contact
-
-For any questions or feedback, please contact:
-
-Email: aliftan29@gmail.com
-
-## Components
-
-### GenreTable
-
-The GenreTable component displays a table of music genres and their associated users. It provides an interactive interface for expanding and collapsing genre details.
-
-[Learn more about GenreTable](./src/components/GenreTable.md)
 
 ## Technologies Used
 
@@ -68,10 +55,8 @@ The GenreTable component displays a table of music genres and their associated u
 - Tailwind CSS
 - Vite
 
-## Contributing
+## Contact
 
-Guidelines for contributing to your project...
+For any questions or feedback, please contact:
 
-## License
-
-Your project's license information...
+Email: aliftan29@gmail.com
