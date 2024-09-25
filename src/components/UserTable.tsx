@@ -2,6 +2,18 @@ import { Component, For, Show, createSignal } from 'solid-js';
 import { User } from '../types';
 import WatchHistoryTable from './WatchHistoryTable';
 
+/**
+ * UserTable Component
+ * 
+ * This component renders a table of users with expandable rows to show watch history.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {User[]} props.users - Array of user objects to display
+ * 
+ * @example
+ * <UserTable users={usersData} />
+ */
 const UserTable: Component<{ users: User[] }> = (props) => {
     const [expandedUsers, setExpandedUsers] = createSignal<Set<string>>(new Set());
 
@@ -58,3 +70,30 @@ const UserTable: Component<{ users: User[] }> = (props) => {
 };
 
 export default UserTable;
+
+/**
+ * Additional Component Documentation
+ * 
+ * Structure:
+ * - Renders a table with columns for user details (name, email, birthdate, subscription date).
+ * - Includes an expandable section for each user's watch history.
+ * 
+ * Key Features:
+ * - Expandable rows to show/hide watch history.
+ * - Efficient rendering using SolidJS's `For` component.
+ * 
+ * State Management:
+ * - Uses local state (`expandedUsers`) to track which users' watch histories are expanded.
+ * 
+ * Performance Considerations:
+ * - Lazy loading of watch history data improves initial render time.
+ * - Consider implementing virtualization for large user lists.
+ * 
+ * Accessibility:
+ * - TODO: Add proper ARIA attributes for expandable sections.
+ * - TODO: Enhance keyboard navigation for expanding/collapsing rows.
+ * 
+ * Future Improvements:
+ * - Add sorting functionality for columns.
+ * - Implement pagination or infinite scrolling for large datasets.
+ */

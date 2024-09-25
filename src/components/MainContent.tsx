@@ -13,6 +13,33 @@ interface MainContentProps {
     loadTime: () => number;
 }
 
+/**
+ * MainContent Component
+ * 
+ * This component is responsible for rendering the main content area of the application,
+ * including the search functionality, data grouping, and expandable item lists.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {() => 'country' | 'genre'} props.groupBy - Function returning the current grouping mode
+ * @param {string} props.searchTerm - Current search term
+ * @param {(value: string) => void} props.setSearchTerm - Function to update the search term
+ * @param {() => (CountryData | Genre)[]} props.filteredData - Function returning the filtered data based on current filters
+ * @param {() => Set<string>} props.expandedItems - Function returning the set of currently expanded items
+ * @param {(item: string) => void} props.toggleItem - Function to toggle the expanded state of an item
+ * @param {() => number} props.loadTime - Function returning the load time of the data
+ * 
+ * @example
+ * <MainContent
+ *   groupBy={groupBy}
+ *   searchTerm={searchTerm}
+ *   setSearchTerm={setSearchTerm}
+ *   filteredData={filteredData}
+ *   expandedItems={expandedItems}
+ *   toggleItem={toggleItem}
+ *   loadTime={loadTime}
+ * />
+ */
 const MainContent: Component<MainContentProps> = (props) => {
     const matchesSearch = (user: User) => {
         const searchLower = props.searchTerm.toLowerCase();
@@ -96,3 +123,31 @@ const MainContent: Component<MainContentProps> = (props) => {
 };
 
 export default MainContent;
+
+/**
+ * Additional Component Documentation
+ * 
+ * Structure:
+ * - Renders a search input, data table, and conditional user table based on search results.
+ * - Displays load time for performance monitoring.
+ * 
+ * Key Features:
+ * - Dynamic grouping by country or genre.
+ * - Search functionality across user names and emails.
+ * - Expandable/collapsible rows for detailed information.
+ * 
+ * State Management:
+ * - Utilizes props for state management, following a unidirectional data flow.
+ * 
+ * Performance Considerations:
+ * - Uses SolidJS's `For` component for efficient list rendering.
+ * - Implements conditional rendering to optimize for large datasets.
+ * 
+ * Accessibility:
+ * - TODO: Enhance keyboard navigation for the data table.
+ * - TODO: Add proper ARIA labels for interactive elements.
+ * 
+ * Future Improvements:
+ * - Implement virtualization for handling very large datasets.
+ * - Add sorting capabilities for columns.
+ */

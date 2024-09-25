@@ -2,6 +2,21 @@ import { Component, For, Show, createSignal } from 'solid-js';
 import { Genre } from '../types';
 import UserTable from './UserTable';
 
+/**
+ * GenreTable Component
+ * 
+ * This component displays a table of music genres and their associated users.
+ * It allows for expanding/collapsing each genre to show/hide the list of users.
+ * 
+ * @component
+ * @param {Object} props - The component props
+ * @param {Genre[]} props.genres - An array of Genre objects to display
+ * 
+ * @example
+ * ```tsx
+ * <GenreTable genres={genreData} />
+ * ```
+ */
 const GenreTable: Component<{ genres: Genre[] }> = (props) => {
     const [expandedGenres, setExpandedGenres] = createSignal<Set<string>>(new Set());
 

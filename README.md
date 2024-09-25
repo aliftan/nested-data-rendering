@@ -52,3 +52,26 @@ To learn more about SolidJS, check out the [Solid Documentation](https://www.sol
 For any questions or feedback, please contact:
 
 Email: aliftan29@gmail.com
+
+## Components
+
+### GenreTable
+
+The GenreTable component displays a table of music genres and their associated users. It provides an interactive interface for expanding and collapsing genre details.
+
+[Learn more about GenreTable](./src/components/GenreTable.md)
+
+## Technologies Used
+
+- SolidJS
+- TypeScript
+- Tailwind CSS
+- Vite
+
+## Contributing
+
+Guidelines for contributing to your project...
+
+## License
+
+Your project's license information...
