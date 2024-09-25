@@ -1,34 +1,54 @@
-## Usage
+# Netflix User Data Table
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## Overview
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+This project is a data visualization tool for analyzing Netflix user data. It demonstrates how to handle and display nested data structures efficiently using SolidJS, a modern JavaScript library for building user interfaces.
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+## Key Features
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+- Visualizes complex, nested Netflix user data
+- Allows grouping by country or genre
+- Implements filtering by search term, country, and genre
+- Utilizes responsive design with Tailwind CSS
+- Optimizes performance with SolidJS signals and memoization
 
-## Available Scripts
+## Data Structure
 
-In the project directory, you can run:
+The application works with a nested data structure:
 
-### `npm run dev` or `npm start`
+- Countries
+  - Genres
+    - Users
+      - Watch History
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Main Components
 
-The page will reload if you make edits.<br>
+1. `App`: The main component that manages the overall state and layout.
+2. `Sidebar`: Handles filtering options and grouping selection.
+3. `MainContent`: Displays the filtered and grouped data.
+4. `GenreTable`: Shows genre-specific information when grouped by country.
+5. `UserTable`: Displays user-specific information when grouped by genre.
 
-### `npm run build`
+## Key Implementations
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+- **Data Filtering**: Implemented in `utils/filters.ts`, allowing for efficient filtering of the nested data structure.
+- **Dynamic Grouping**: Users can switch between grouping by country or genre, demonstrating flexible data manipulation.
+- **Expandable Items**: Users can expand/collapse country or genre entries to view more detailed information.
+- **Performance Optimization**: Utilizes SolidJS's reactive system for efficient updates and rendering.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Getting Started
 
-## Deployment
+1. Clone the repository
+2. Install dependencies: `npm install` or `pnpm install`
+3. Run the development server: `npm run dev` or `pnpm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+## Learn More
+
+To learn more about SolidJS, check out the [Solid Documentation](https://www.solidjs.com/docs/latest/api).
+
+## Contact
+
+For any questions or feedback, please contact:
+
+Email: aliftan29@gmail.com

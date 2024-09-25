@@ -45,7 +45,7 @@ const Sidebar: Component<SidebarProps> = (props) => {
             <Show when={props.groupBy() === 'country'}>
                 <div class="mb-6">
                     <h3 class="font-semibold mb-2">Countries</h3>
-                    <div class="max-h-60 overflow-y-auto">
+                    <div>
                         <For each={props.allCountries()}>
                             {(country) => (
                                 <label class="flex items-center mb-2 cursor-pointer">
